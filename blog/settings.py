@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(os.environ.get('postgres://cvvqoysninwgag:f46166a38c0d1a27edd9246ed79f612ac19f64317ccf421a35076a3e81ce1197@ec2-46-137-113-157.eu-west-1.compute.amazonaws.com:5432/dc0e3ka5u048nh'))
     }
 else:
     print("Postgres URL not found, using sqlite instead")
