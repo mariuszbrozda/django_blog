@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 
+
+if os.environ.get('DEVELOPMENT'):
+    development = True
+else:
+    development = False
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wfsmxz(7_6asusd+gp9u4azxqxac4-k+%r_2+n6w=b*i72&6p!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
 ALLOWED_HOSTS = [os.environ.get("C9_HOST"), '127.0.0.1', 'vegan-dot-blog-app.herokuapp.com']
 
